@@ -1,0 +1,12 @@
+[submodule "node-server-auth0-sso"]
+	path = node-server-auth0-sso
+	url = https://github.com/flex021/node-server-auth0-sso
+[submodule "backend"]
+	path = backend
+	url = https://github.com/flex021/node-server-auth0-sso.git
+[submodule "web1-frontend"]
+	path = web1-frontend
+	url = https://github.com/flex021/react-SSO-ideft.git
+[submodule "web2-frontend"]
+	path = web2-frontend
+	url = https://github.com/flex021/react-SSO-02-ideft.git
