@@ -1,6 +1,3 @@
-[submodule "node-server-auth0-sso"]
-	path = node-server-auth0-sso
-	url = https://github.com/flex021/node-server-auth0-sso
 [submodule "backend"]
 	path = backend
 	url = https://github.com/flex021/node-server-auth0-sso.git
