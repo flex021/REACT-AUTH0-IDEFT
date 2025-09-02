@@ -1,50 +1,139 @@
 # Multi-Frontend SSO Project with Auth0
 
+> **Production-ready Single Sign-On implementation across multiple React applications**
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Here-2ea44f?style=for-the-badge)](https://react-sso-ideft.vercel.app)
+
 ## Overview
-This is a **small project demonstrating Single Sign-On (SSO)** using **Auth0** with:
 
-- **Backend**: Node.js + Express  
-- **Frontends**: 2 React apps to test SSO  
+This project demonstrates enterprise-level **Single Sign-On (SSO)** implementation using **Auth0** with seamless authentication across multiple frontend applications.
 
-Structure:
-- `backend` → API server (local: http://localhost:8017)  
-- `web1-frontend` → React frontend #1 (local: http://localhost:5173 / live: [React SSO IDEFT](https://react-sso-ideft.vercel.app))  
-- `web2-frontend` → React frontend #2 (local: http://localhost:6600 / live: [React SSO 02 IDEFT](https://react-sso-02-ideft.vercel.app))  
+**Architecture:**
+- Backend: Node.js + Express API server
+- Frontend 1: React application ([Live Demo](https://react-sso-ideft.vercel.app))  
+- Frontend 2: React application ([Live Demo](https://react-sso-02-ideft.vercel.app))
 
-Goal: demonstrate knowledge of **multi-frontend SSO**.
+**Key Features:**
+- 🔐 Unified authentication across multiple applications
+- 🔄 Synchronized logout from all connected frontends  
+- 🚀 Independent deployment and scaling
+- ⚡ Production-ready with live demonstrations
 
----
+## Technical Implementation
 
-## Features
-
-- **SSO with Auth0**: login once, access multiple frontends.  
-- **Logout sync**: logging out from one frontend logs out user from the other.  
-- **Independent deployment**: backend and frontends deployed separately.  
-
----
-
-## How It Works
-
-1. User visits Web1 or Web2.  
-2. Frontend redirects to Auth0 for authentication.  
-3. After login, user can switch between Web1 and Web2 **without logging in again**.  
-4. Logging out from one frontend triggers logout on the other automatically via Auth0.
-
----
-
-## Setup
-
-### Backend
-
+**Backend** (`localhost:8017`)
 ```bash
 cd backend
 yarn install
 yarn dev
+```
 
-Runs on http://localhost:8017
-
-### Frontend (Web1 / Web2)
+**Frontend Applications**
 ```bash
-cd web1-frontend  # or web2-frontend
+# Frontend 1 (localhost:5173)
+cd web1-frontend
 yarn install
 yarn dev
+
+# Frontend 2 (localhost:6600)
+cd web2-frontend
+yarn install
+yarn dev
+```
+
+> **Note:** Both frontends use identical package.json. Web2 requires port configuration change to 6600 in vite.config.js
+
+**Technology Stack:**
+- **Authentication:** Auth0 with `express-oauth2-jwt-bearer`
+- **Frontend:** React 18.3.1, Vite 5.3.1, `@auth0/auth0-react` 2.2.4
+- **Backend:** Node.js 20.x, Express 4.18.2, Babel transpilation
+- **Database:** NeDB (embedded database)
+- **Deployment:** Vercel (frontend), Render (backend)
+
+## Authentication Flow
+
+1. User accesses any frontend application
+2. Redirect to Auth0 for authentication  
+3. Return with valid JWT token
+4. Access granted to all connected applications
+5. Logout from one application = logout from all
+
+## Project Structure
+
+```
+project/
+├── backend/           # Express API server
+├── web1-frontend/     # React application #1
+├── web2-frontend/     # React application #2
+└── README.md         # This file
+```
+
+## Development & Production Scripts
+
+**Backend Commands:**
+```bash
+npm run dev          # Development with Babel + Nodemon
+npm run build        # Clean + Babel transpilation  
+npm run production   # Build + Production server
+npm run lint         # ESLint validation
+```
+
+**Frontend Commands:**
+```bash
+npm run dev          # Vite dev server with --host --port 5173
+npm run build        # Production build
+npm run preview      # Preview production build
+npm run lint         # ESLint validation
+```
+
+## Key Dependencies
+
+**Backend:**
+- `express-oauth2-jwt-bearer` - Auth0 JWT validation middleware
+- `nedb-promises` - Embedded database for lightweight data storage
+- `cors` - Cross-Origin Resource Sharing configuration
+- `babel` - ES6+ transpilation for Node.js compatibility
+
+**Frontend:**
+- `@auth0/auth0-react` - Auth0 React SDK for authentication
+- `axios` - HTTP client for API communication
+- `react-json-view` - JSON data visualization component
+- `@vitejs/plugin-react-swc` - Fast React refresh with SWC compiler
+
+**Auth0 Tenant Settings:**
+- Callback URLs: Include all frontend URLs
+- Web Origins: Include all application origins  
+- Logout URLs: Include all frontend logout endpoints
+
+## Configuration Requirements
+
+This project uses **Git Submodules** for modular development:
+
+```bash
+# Clone with all submodules
+git clone --recurse-submodules <repo-url>
+
+# Update submodule references
+git submodule update --remote
+git add backend web1-frontend web2-frontend
+git commit -m "Update submodule references"
+```
+
+## Deployment
+
+- **Backend:** Deployed on Render with auto-deploy from Git
+- **Frontends:** Deployed on Vercel with auto-deploy from Git
+- **Environment:** Production-ready with proper CORS and security headers
+
+## Business Value
+
+**Problem Solved:** Eliminates need for users to authenticate multiple times across related applications, improving user experience and reducing support overhead.
+
+**Technical Benefits:** 
+- Centralized user management
+- Scalable authentication system  
+- Reduced development complexity for new applications
+
+---
+
+**Note:** This project demonstrates real-world SSO implementation patterns suitable for enterprise applications.
