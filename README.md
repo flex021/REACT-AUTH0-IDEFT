@@ -41,7 +41,7 @@ yarn install
 yarn dev
 ```
 
-> **Note:** Both frontends use identical package.json. Web2 requires port configuration change to 6600 in vite.config.js
+> **Note:** Both frontends use identical package.json.
 
 **Technology Stack:**
 - **Authentication:** Auth0 with `express-oauth2-jwt-bearer`
@@ -51,6 +51,18 @@ yarn dev
 - **Deployment:** Vercel (frontend), Render (backend)
 
 ## Authentication Flow
+<div align="center">
+
+<div>
+  <img src="https://github.com/user-attachments/assets/781656f0-c4f5-4b04-a7d6-fc9022a7d3af" width="320" alt="Auth0 Login" style="display:inline-block; margin:8px;">
+  <img src="https://github.com/user-attachments/assets/f0e2915a-ff38-4084-8a78-6064365e04f8" width="320" alt="Web1 Dashboard" style="display:inline-block; margin:8px;">
+  <img src="https://github.com/user-attachments/assets/1afba49c-e5ad-420e-a8ef-0d5ed3d5345e" width="320" alt="Web2 Dashboard" style="display:inline-block; margin:8px;">
+</div>
+
+*Auth0 Login → Web1 Dashboard → Web2 Dashboard (Same User Authentication)*
+
+</div>
+
 
 1. User accesses any frontend application
 2. Redirect to Auth0 for authentication  
@@ -72,7 +84,7 @@ project/
 
 **Backend Commands:**
 ```bash
-npm run dev          # Development with Babel + Nodemon
+yarn dev             # Development with Babel + Nodemon
 npm run build        # Clean + Babel transpilation  
 npm run production   # Build + Production server
 npm run lint         # ESLint validation
@@ -80,7 +92,7 @@ npm run lint         # ESLint validation
 
 **Frontend Commands:**
 ```bash
-npm run dev          # Vite dev server with --host --port 5173
+yarn dev             # Vite dev server with --host --port 5173
 npm run build        # Production build
 npm run preview      # Preview production build
 npm run lint         # ESLint validation
