@@ -70,6 +70,22 @@ yarn dev
 4. Access granted to all connected applications
 5. Logout from one application = logout from all
 
+## SSO Notes / Demo
+
+This project uses Auth0 for SSO across multiple React apps.
+
+- Logging into **App 1** creates a session in Auth0.
+- **App 2** detects the session on load; a **page refresh** may be needed to sync login.
+- This is normal SPA behavior, not a bug.
+
+**Demo Account:**  
+- Email: `test-sso@gmail.com`  
+- Password: `test@123`  
+
+You can also log in via **Google, Facebook, GitHub**.
+
+- - -
+
 ## Project Structure
 
 ```
