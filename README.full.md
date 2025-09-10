@@ -56,7 +56,7 @@ yarn dev
 <div align="center">
 
 <div>
-  <img src="https://github.com/user-attachments/assets/781656f0-c4f5-4b04-a7d6-fc9022a7d3af" width="320" alt="Auth0 Login" style="display:inline-block; margin:8px;">
+  <img src="https://github.com/user-attachments/assets/8691007b-6977-41ac-ba32-7e72543c7e83" width="320" alt="Auth0 Login" style="display:inline-block; margin:8px;">
   <img src="https://github.com/user-attachments/assets/f0e2915a-ff38-4084-8a78-6064365e04f8" width="320" alt="Web1 Dashboard" style="display:inline-block; margin:8px;">
   <img src="https://github.com/user-attachments/assets/1afba49c-e5ad-420e-a8ef-0d5ed3d5345e" width="320" alt="Web2 Dashboard" style="display:inline-block; margin:8px;">
 </div>
