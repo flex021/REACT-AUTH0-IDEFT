@@ -13,6 +13,9 @@ This project showcases **Single Sign-On (SSO)** using **Auth0** with seamless lo
 - **Frontend 2**: React app ([Live Demo](https://react-sso-02-ideft.vercel.app))
 - **Backend**: Node.js + Express API server ([Render](https://rbac-ideft.onrender.com))
 
+  
+**Note:** Open both React apps to use the SSO functionality.
+
 **Key Features:**
 - 🔐 Unified authentication across multiple applications
 - 🔄 Synchronized logout from all frontends
