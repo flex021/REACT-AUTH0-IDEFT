@@ -9,9 +9,11 @@
 This project demonstrates enterprise-level **Single Sign-On (SSO)** implementation using **Auth0** with seamless authentication across multiple frontend applications.
 
 **Architecture:**
-- Backend: Node.js + Express API server
 - Frontend 1: React application ([Live Demo](https://react-sso-ideft.vercel.app))  
 - Frontend 2: React application ([Live Demo](https://react-sso-02-ideft.vercel.app))
+- Backend: Node.js + Express API server
+
+**Note:** Open both React apps to use the SSO functionality.
 
 **Key Features:**
 - 🔐 Unified authentication across multiple applications
